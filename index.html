@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据可视化交互平台</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>数据可视化交互平台</h1>
+            <p>基于第2章数据可视化内容的交互式展示</p>
+        </header>
+
+        <div class="controls">
+            <div class="chart-selector">
+                <label for="chartType">选择图表类型:</label>
+                <select id="chartType">
+                    <option value="line">折线图</option>
+                    <option value="bar">柱状图</option>
+                    <option value="pie">饼图</option>
+                    <option value="scatter">散点图</option>
+                    <option value="radar">雷达图</option>
+                </select>
+            </div>
+            
+            <div class="data-selector">
+                <label for="dataset">选择数据集:</label>
+                <select id="dataset">
+                    <option value="sales">销售数据</option>
+                    <option value="users">用户数据</option>
+                    <option value="products">产品数据</option>
+                    <option value="custom">自定义数据</option>
+                </select>
+            </div>
+
+            <button id="generateBtn" class="btn">生成图表</button>
+            <button id="exportBtn" class="btn">导出图表</button>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="data-table">
+            <h3>数据表格</h3>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>月份</th>
+                        <th>销售额</th>
+                        <th>用户数</th>
+                        <th>增长率</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- 数据将通过JavaScript动态填充 -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="custom-data">
+            <h3>自定义数据输入</h3>
+            <textarea id="customData" placeholder="请输入JSON格式的数据..."></textarea>
+            <button id="loadCustomData" class="btn">加载自定义数据</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
